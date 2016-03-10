@@ -350,11 +350,10 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  max-width: 100%; }
 
 h1,
 h2,
@@ -380,7 +379,7 @@ address {
   margin: 0 0 1.5em; }
 
 pre {
-  background: #eee;
+  background: #000;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -396,7 +395,8 @@ tt,
 var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
-  font-size: 0.9375rem; }
+  font-size: 0.9375rem;
+  background: black; }
 
 abbr,
 acronym {
@@ -405,7 +405,8 @@ acronym {
 
 mark,
 ins {
-  background: #fff9c0;
+  background: black;
+  border: 1px solid #b2df82;
   text-decoration: none; }
 
 big {
@@ -1220,6 +1221,9 @@ hr.clear {
 .site-header {
   position: relative; }
 
+.header-image {
+  text-align: center; }
+
 .main-navigation {
   display: inline-block; }
   .main-navigation .menu-toggle {
@@ -1336,6 +1340,22 @@ hr.clear {
   padding-bottom: 10px;
   border-bottom: 1px solid #000;
   display: block; }
+  .main-navigation li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative; }
+    .main-navigation li ul {
+      display: none;
+      position: absolute; }
+      .main-navigation li ul li {
+        display: block;
+        margin: 0;
+        padding: 10px; }
+    .main-navigation li:hover ul {
+      display: block;
+      min-width: 200px;
+      background: black;
+      z-index: 10; }
 
 .site-footer {
   margin-top: 40px;
@@ -1587,6 +1607,15 @@ textarea {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 3px solid #b2df82; }
+  .entry ul {
+    list-style-type: disc;
+    margin-left: 20px; }
+  .entry ol {
+    list-style-type: decimal-leading-zero;
+    margin-left: 43px; }
+  .entry h1, .entry h2, .entry h3, .entry h4, .entry h5 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem; }
   .entry .entry-content {
     margin: 10px 0; }
   .entry .comments-link {
@@ -1601,8 +1630,8 @@ textarea {
       color: #0f110c; }
     .entry .entry-title a:hover {
       color: #0f110c; }
-  .entry .posted-on .updated {
-    margin-left: 20px; }
+  .entry .entry-footer > span {
+    margin-right: 10px; }
   .entry .attachment-post-thumbnail {
     float: left;
     max-width: 50%;

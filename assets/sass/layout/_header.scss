@@ -3,6 +3,10 @@
 	// height: $layout-header-height;
 }
 
+.header-image {
+	text-align: center
+}
+
 .main-navigation {
 	display: inline-block;
 
@@ -170,4 +174,28 @@
 	padding-bottom: 10px;
 	border-bottom: 1px solid #000;
 	display: block;
+
+	li {
+		display: inline-block;
+		margin: 0 10px;
+		position: relative;
+
+		ul {
+			display: none;
+			position: absolute;
+
+			li {
+				display: block;
+				margin: 0;
+				padding: 10px;
+			}
+		}
+
+		&:hover ul {
+			display: block;
+			min-width: 200px;
+			background: black;
+			z-index: 10;
+		}
+	}
 }

@@ -255,11 +255,10 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	max-width: 100%;
 }
 
 h1,
@@ -291,7 +290,7 @@ address {
 }
 
 pre {
-	background: #eee;
+	background: #000;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -309,6 +308,7 @@ var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
+	background: black;
 }
 
 abbr,
@@ -319,7 +319,8 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
+	background: black;
+	border: 1px solid $color-text;
 	text-decoration: none;
 }
 

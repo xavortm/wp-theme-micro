@@ -50,9 +50,6 @@ module.exports = function (grunt) {
 				files: { 
 					'assets/scripts/scripts.min.js':
 					[
-						'assets/scripts/modernizr.min.js',
-						// 'assets/scripts/headroom.min.js',
-						// 'assets/scripts/owl.carousel.min.js',
 						'assets/scripts/navigation.js',
 						'assets/scripts/skip-link-focus.js',
 						'assets/scripts/scripts.js'

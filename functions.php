@@ -100,9 +100,14 @@ function micro_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'micro_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => '000000',
 		'default-image' => '',
 	) ) );
+
+	add_theme_support( 'custom-header', array(
+		'width' => 1920,
+		'flex-width'    => true
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'micro_setup' );
