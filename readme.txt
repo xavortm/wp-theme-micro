@@ -1,6 +1,6 @@
-=== DevriX Starter ===
+=== Micro ===
 
-Contributors: DevriX, xavortm
+Contributors: xavortm
 Tags: black, green, two-columns
 
 Requires at least: 4.0
