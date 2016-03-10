@@ -1,0 +1,35 @@
+.comment-form {
+	margin-top: 20px;
+
+	textarea, input {
+		display: block;
+	}
+}
+
+.comments-area {
+	margin-top: 40px;
+}
+
+.comment {
+	margin: 20px 0;
+	position: relative;
+	padding-left: 20px;
+
+	&:before {
+		content: '>';
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.comment-metadata,
+	.comment-author {
+		display: inline-block;
+	}
+
+	.avatar {
+		height: 16px;
+		width: 16px;
+	}
+}

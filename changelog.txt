@@ -1,0 +1,6 @@
+=== DX-Starter ===
+
+Modified DevriX Starter starter theme by DevriX
+
+= 7/3/2016 - Version 1.0.0 =
+ * Initial version for the starter theme

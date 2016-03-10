@@ -1,0 +1,82 @@
+/**
+ * Place ul element in the middle of its parent. The structure
+ * .center-ul > ul must be followed in order to work. (uds)
+ */
+.center-ul{
+	text-align: center;
+	& > ul { display: inline-block; }
+}
+
+/**
+ * WordPress required styling
+ */
+.float-right{
+	float: right;
+}
+
+.float-left{
+	float: left;
+}
+
+.no-float,
+.flost-none {
+	float: none;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.cb { clear: both }
+hr.clear { border: none; background: transparent; clear: both; }
+
+/**
+ * Text Modifiers
+ */
+.text-right 	{ text-align: right; }
+.text-left 		{ text-align: left; }
+.text-center 	{ text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+.text-italic 	{ font-style: italic; }
+
+.text-white {
+	color: white;
+
+	h1,h2,h3,h4,h5,h6 { color: white; }
+	a { color: white; }
+	a:hover { color: white; }
+}
+
+/**
+ * Quick margin classes
+ */
+.mt-0 { margin-top: 0 !important; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mt-50 { margin-top: 50px; }
+.mt-60 { margin-top: 60px; }
+.mt-70 { margin-top: 70px; }
+.mt-80 { margin-top: 80px; }
+.mt-90 { margin-top: 90px; }
+.mt-100 { margin-top: 100px; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-50 { margin-bottom: 50px; }
+.mb-60 { margin-bottom: 60px; }
+.mb-70 { margin-bottom: 70px; }
+.mb-80 { margin-bottom: 80px; }
+.mb-90 { margin-bottom: 90px; }
+.mb-100 { margin-bottom: 100px; }
+
+/**
+ * Helpful on .columns classes
+ */
+.position-initial {
+	position: initial;
+}

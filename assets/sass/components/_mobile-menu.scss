@@ -1,0 +1,244 @@
+body.is-menu-opened {
+	// overflow: hidden;
+}
+
+.menu-overlay {
+	height: 100%;
+	transform: translate3d(-100%, 0, 0);
+	transition: 0.3s transform;
+	z-index: 90 - 1;
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	display: block;
+	background: #202022;
+}
+
+.menu-icon {
+	float: left;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	transition: 0.3s;
+	margin: rem-calc(13px 0 5px);
+	font-size: 17px;
+
+	&:hover {
+		color: $color-primary;
+		transform: scale(1.01,1);
+	}
+
+	// Disable select on multiple clicks.
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	$menu-icon-thinkness: 3px;
+	$menu-icon-width: 20px;
+
+	&.opened {
+		transition: 0.3s;
+		transform: translateX(8px);
+	}
+
+	&__bar {
+		background: #333;
+		display: block;
+		height: $menu-icon-thinkness / 3;
+		margin: 5px 0;
+		width: $menu-icon-width;
+		transition: 0.3s;
+
+		&.bar--top { margin-top: 3px }
+		&.bar--bot { margin-bottom: 0 }
+	}
+
+	// Hover animations.
+	&.opened &__bar {
+		background: $color-primary;
+		transition: 0.3s;
+
+		&.bar--top {
+			transform: rotate(45deg) translateY(13px);
+		}
+
+		&.bar--mid {
+			transform: scale(0.1);
+			opacity: 0;
+			filter: alpha(opacity=0);
+		}
+
+		&.bar--bot {
+			transform: rotate(-45deg) translateY(-13px);
+		}
+	}
+
+	&__text {
+		float: left;
+		margin-left: $menu-icon-width + 10;
+		display: inline-block;
+	}
+}
+
+.site-navigation .dropdown-arrow {
+	display: none;
+}
+
+@media (min-width: $breakpoint-small) {
+	.menu-icon {
+		display: none;
+	}
+}
+
+@media (max-width: $breakpoint-small) {
+	.menu-primary {
+		filter: alpha(opacity=0);
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		transition: 0.3s transform;
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+		z-index: 80;
+		background: #fff;
+
+		.wrap {
+			border-top: 1px solid #ccc;
+		}
+
+		.nav-menu {
+			// width: 95%;
+		}
+
+		&.init {
+			transition: none;
+		}
+
+		&.is-extended {
+			pointer-events: auto;
+			filter: alpha(opacity=100);
+			display: block;
+			transition: 0.3s transform;
+			transform: translate3d(0, 0, 0);
+		    box-shadow: 0 30px 69px rgba(0, 0, 0, 0.2);
+			opacity: 1;
+		}
+
+		.menu {
+			background: #333;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.menu-item {
+			display: block;
+			width: 100%;
+			padding: 0;
+
+			a {
+				margin-right: 40px;
+				font-size: 18px;
+				text-align: left;
+
+				@media (max-width: $breakpoint-mobile) {
+					margin-right: 0;
+				}
+			}
+		}
+
+		a {
+			text-decoration: none;
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size: 15px;
+			padding: 0.5em 1em;
+			display: block;
+		}
+
+	}
+
+	.menu-item-has-children {
+		position: relative;
+		max-height: 2.7959em;
+		height: 100%;
+		// transition: 0.4s all;
+
+		.dropdown-arrow {
+			font-family: FontAwesome;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 4px;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 1.56em;
+			cursor: pointer;
+			transition: 0;
+
+			&, & i {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			i {
+				transition: 0s;
+			}
+		}
+
+		// Submenu
+		.sub-menu {
+			padding-left: 0;
+			pointer-events: none;
+			transform: translate3d(0, -50%, 0);
+			opacity: 0;
+			position: relative;
+			width: 100%;
+			display: none;
+
+			a {
+				font-weight: normal;
+				text-transform: none;
+			}
+
+			.menu-item {
+				&:last-child {
+					border-bottom: none; 
+				}
+			}
+		}
+
+		&.is-extended {
+			max-height: 100%;
+			// transition: 0.4s all;
+
+			& > .dropdown-arrow {
+
+				i {
+					transform: rotate(90deg);
+					// transition: 0.4s transform;
+				}
+			}
+
+			& > .sub-menu {
+				// transition: 0.4s all;
+			}
+		}
+
+		&.is-extended > .sub-menu {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+			filter: alpha(opacity=100);
+			pointer-events: auto;
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+// The master CSS file.
+// ----------------------------------------------------------------------------
+// One css to rule them all, One css to find them; One css to bring them all
+// and in the darkness bind them.
+// The order of files include is important. Dont change it.
+
+
+// All general settings and utils
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+@import "base/fonts";
+@import "base/general";
+@import "base/helpers";
+
+
+// The Foundation 6.0 grid system
+@import "foundation/foundation";
+
+// Including plugins before site stlyling to allow overwrite
+@import "plugins/owl";
+
+
+// Separating the largest parts of the site in specific files.
+@import "layout/general";
+@import "layout/header";
+@import "layout/footer";
+
+
+// Any other module that can be reused multuple times.
+@import "components/mobile-menu";
+@import "components/buttons";
+@import "components/sections";
+@import "components/elements";
+@import "components/comment";
+@import "components/input";
+@import "components/entry";
+@import "components/widgets";
+
+
+// If there is anything specific for a page it should be in this folder
+@import "pages/404";
+@import "pages/single";
+@import "pages/search";

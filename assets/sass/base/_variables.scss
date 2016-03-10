@@ -1,0 +1,41 @@
+// Global settings
+$global-layout-gutter: 20px;
+$global-font-size: 14px;
+$global-width: 1200px;
+
+
+// Custom media query breakpoints.
+$breakpoint-mobile: 480px;
+
+
+// Standart set media queries
+$breakpoint-small: 	640px;
+$breakpoint-medium: 960px;
+$breakpoint-large: 	1200px;
+
+
+// Layout
+$layout-header-height: 70px;
+
+
+// Colors:
+$color-green: #5ea54d;
+$color-blue: #4072db;
+$color-navy: #3f3f75;
+$color-orange: #ff4902;
+
+$color-primary: $color-blue;		// Navy blue
+$color-primary-dark: $color-navy;	// Navy blue
+$color-secondary: $color-green; 	// Blue
+$color-accent: $color-orange;		// Orange
+
+$color-text: #b2df82;
+$color-background: #0f110c;
+$color-link: $color-text;
+
+
+
+// Fonts
+$font-serif: Georgia, "Times New Roman", serif;
+$font-primary: "Monaco", "PT Mono", "Consolas", "courier new";
+$font-heading: $font-primary;

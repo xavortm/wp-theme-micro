@@ -1,0 +1,830 @@
+Searching 94 files for "micro"
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/404.php:
+   18  						<div class="error-404 not-found">
+   19  							<header class="page-header">
+   20: 								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'micro' ); ?></h1>
+   21  							</header><!-- .page-header -->
+   22  
+   23  							<div class="page-content">
+   24: 								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'micro' ); ?></p>
+   25  
+   26  								<?php
+   ..
+   30  
+   31  								// Only show the widget if site has multiple categories.
+   32: 								if ( micro_categorized_blog() ) :
+   33  								?>
+   34  
+   35  								<div class="widget widget_categories">
+   36: 									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'micro' ); ?></h2>
+   37  									<ul>
+   38  									<?php
+   ..
+   52  
+   53  								/* translators: %1$s: smiley */
+   54: 								$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'micro' ), convert_smilies( ':)' ) ) . '</p>';
+   55  								the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+   56  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/comments.php:
+   29  			<?php
+   30  				printf( // WPCS: XSS OK.
+   31: 					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'micro' ) ),
+   32  					number_format_i18n( get_comments_number() ),
+   33  					'<span>' . get_the_title() . '</span>'
+   ..
+   38  		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+   39  		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+   40: 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'micro' ); ?></h2>
+   41  			<div class="nav-links">
+   42  
+   43: 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'micro' ) ); ?></div>
+   44: 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'micro' ) ); ?></div>
+   45  
+   46  			</div><!-- .nav-links -->
+   ..
+   59  		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+   60  		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+   61: 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'micro' ); ?></h2>
+   62  			<div class="nav-links">
+   63  
+   64: 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'micro' ) ); ?></div>
+   65: 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'micro' ) ); ?></div>
+   66  
+   67  			</div><!-- .nav-links -->
+   ..
+   76  	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+   77  
+   78: 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'micro' ); ?></p>
+   79  	<?php
+   80  	endif;
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/footer.php:
+   18  			<div class="columns small-12">
+   19  				<div class="site-info">
+   20: 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'micro' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'micro' ), 'WordPress' ); ?></a>
+   21  					<span class="sep"> | </span>
+   22: 					<?php printf( esc_html__( 'Developed by: %1$s by %2$s.', 'micro' ), 'micro', '<a href="http://devrix.com">DevriX</a>' ); ?>
+   23  				</div><!-- .site-info -->
+   24  			</div><!-- .small-12 -->
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/functions.php:
+   35  
+   36  
+   37: if ( ! function_exists( 'micro_setup' ) ) :
+   38  /**
+   39   * Sets up theme defaults and registers support for various WordPress features.
+   ..
+   43   * as indicating support for post thumbnails.
+   44   */
+   45: function micro_setup() {
+   46  	/*
+   47  	 * Make theme available for translation.
+   48  	 * Translations can be filed in the /languages/ directory.
+   49  	 * If you're building a theme based on DevriX Starter, use a find and replace
+   50: 	 * to change 'micro' to the name of your theme in all the template files.
+   51  	 */
+   52: 	load_theme_textdomain( 'micro', get_template_directory() . '/languages' );
+   53  
+   54  	// Add default posts and comments RSS feed links to head.
+   ..
+   72  	// This theme uses wp_nav_menu() in one location.
+   73  	register_nav_menus( array(
+   74: 		'primary' => esc_html__( 'Primary', 'micro' ),
+   75  	) );
+   76  
+   ..
+  100  
+  101  	// Set up the WordPress core custom background feature.
+  102: 	add_theme_support( 'custom-background', apply_filters( 'micro_custom_background_args', array(
+  103  		'default-color' => 'ffffff',
+  104  		'default-image' => '',
+  ...
+  106  }
+  107  endif;
+  108: add_action( 'after_setup_theme', 'micro_setup' );
+  109  
+  110  /**
+  ...
+  115   * @global int $content_width
+  116   */
+  117: function micro_content_width() {
+  118: 	$GLOBALS['content_width'] = apply_filters( 'micro_content_width', 640 );
+  119  }
+  120: add_action( 'after_setup_theme', 'micro_content_width', 0 );
+  121  
+  122  /**
+  ...
+  125   * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+  126   */
+  127: function micro_widgets_init() {
+  128  	register_sidebar( array(
+  129: 		'name'          => esc_html__( 'Sidebar', 'micro' ),
+  130  		'id'            => 'sidebar-1',
+  131  		'description'   => '',
+  ...
+  136  	) );
+  137  }
+  138: add_action( 'widgets_init', 'micro_widgets_init' );
+  139  
+  140  /**
+  141   * Enqueue scripts and styles.
+  142   */
+  143: function micro_scripts() {
+  144: 	wp_enqueue_style( 'micro-style', get_template_directory_uri() . '/assets/css/master.css' );
+  145  	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+  146  	
+  147  
+  148: 	wp_enqueue_script( 'micro-navigation', get_template_directory_uri() . '/assets/scripts/scripts.min.js', array( "jquery" ), '20151215', true );
+  149  
+  150  	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  ...
+  152  	}
+  153  }
+  154: add_action( 'wp_enqueue_scripts', 'micro_scripts' );
+  155  
+  156  /**
+  157   * Remove the margin-top styling added to the HTML tag by default from WordPress
+  158   */
+  159: function micro_remove_html_margin() {
+  160  	remove_action( 'wp_head', '_admin_bar_bump_cb' );
+  161  }
+  162: add_action( 'get_header', 'micro_remove_html_margin' );
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/header.php:
+   23  <body <?php body_class(); ?>>
+   24  <div id="page" class="site">
+   25: 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'micro' ); ?></a>
+   26  
+   27  	<header id="masthead" class="site-header">
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/package.json:
+    1  {
+    2:   "name": "micro",
+    3    "version": "1.0.0",
+    4    "description": "Quick settings for developing themes.",
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/search.php:
+   20  
+   21  						<header class="page-header">
+   22: 							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'micro' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+   23  						</header><!-- .page-header -->
+   24  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/style.css:
+    8   * License: GNU General Public License v2 or later
+    9   * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+   10:  * Text Domain: micro
+   11   * Tags:
+   12   */
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/custom-header.php:
+   19   * Set up the WordPress core custom header feature.
+   20   *
+   21:  * @uses micro_header_style()
+   22   */
+   23: function micro_custom_header_setup() {
+   24: 	add_theme_support( 'custom-header', apply_filters( 'micro_custom_header_args', array(
+   25  		'default-image'          => '',
+   26  		'default-text-color'     => '000000',
+   ..
+   28  		'height'                 => 250,
+   29  		'flex-height'            => true,
+   30: 		'wp-head-callback'       => 'micro_header_style',
+   31  	) ) );
+   32  }
+   33: add_action( 'after_setup_theme', 'micro_custom_header_setup' );
+   34  
+   35: if ( ! function_exists( 'micro_header_style' ) ) :
+   36  /**
+   37   * Styles the header image and text displayed on the blog.
+   38   *
+   39:  * @see micro_custom_header_setup().
+   40   */
+   41: function micro_header_style() {
+   42  	$header_text_color = get_header_textcolor();
+   43  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/customizer.php:
+   11   * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+   12   */
+   13: function micro_customize_register( $wp_customize ) {
+   14  	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+   15  	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+   16  	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+   17  }
+   18: add_action( 'customize_register', 'micro_customize_register' );
+   19  
+   20  /**
+   21   * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+   22   */
+   23: function micro_customize_preview_js() {
+   24: 	wp_enqueue_script( 'micro_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+   25  }
+   26: add_action( 'customize_preview_init', 'micro_customize_preview_js' );
+   27  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/extras.php:
+   14   * @return array
+   15   */
+   16: function micro_body_classes( $classes ) {
+   17  	// Adds a class of group-blog to blogs with more than 1 published author.
+   18  	if ( is_multi_author() ) {
+   ..
+   27  	return $classes;
+   28  }
+   29: add_filter( 'body_class', 'micro_body_classes' );
+   30  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/jetpack.php:
+   14   * See: https://jetpack.me/support/responsive-videos/
+   15   */
+   16: function micro_jetpack_setup() {
+   17  	// Add theme support for Infinite Scroll.
+   18  	add_theme_support( 'infinite-scroll', array(
+   19  		'container' => 'main',
+   20: 		'render'    => 'micro_infinite_scroll_render',
+   21  		'footer'    => 'page',
+   22  	) );
+   ..
+   25  	add_theme_support( 'jetpack-responsive-videos' );
+   26  }
+   27: add_action( 'after_setup_theme', 'micro_jetpack_setup' );
+   28  
+   29  /**
+   30   * Custom render function for Infinite Scroll.
+   31   */
+   32: function micro_infinite_scroll_render() {
+   33  	while ( have_posts() ) {
+   34  		the_post();
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/template-tags.php:
+    8   */
+    9  
+   10: if ( ! function_exists( 'micro_posted_on' ) ) :
+   11  /**
+   12   * Prints HTML with meta information for the current post-date/time and author.
+   13   */
+   14: function micro_posted_on() {
+   15  	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+   16  	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+   ..
+   26  
+   27  	$posted_on = sprintf(
+   28: 		esc_html_x( 'Posted on %s', 'post date', 'micro' ),
+   29  		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+   30  	);
+   31  
+   32  	$byline = sprintf(
+   33: 		esc_html_x( 'by %s', 'post author', 'micro' ),
+   34  		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+   35  	);
+   ..
+   40  endif;
+   41  
+   42: if ( ! function_exists( 'micro_entry_footer' ) ) :
+   43  /**
+   44   * Prints HTML with meta information for the categories, tags and comments.
+   45   */
+   46: function micro_entry_footer() {
+   47  	// Hide category and tag text for pages.
+   48  	if ( 'post' === get_post_type() ) {
+   49  		/* translators: used between list items, there is a space after the comma */
+   50: 		$categories_list = get_the_category_list( esc_html__( ', ', 'micro' ) );
+   51: 		if ( $categories_list && micro_categorized_blog() ) {
+   52: 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'micro' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+   53  		}
+   54  
+   55  		/* translators: used between list items, there is a space after the comma */
+   56: 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'micro' ) );
+   57  		if ( $tags_list ) {
+   58: 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'micro' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+   59  		}
+   60  	}
+   ..
+   62  	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+   63  		echo '<span class="comments-link">';
+   64: 		comments_popup_link( esc_html__( 'Leave a comment', 'micro' ), esc_html__( '1 Comment', 'micro' ), esc_html__( '% Comments', 'micro' ) );
+   65  		echo '</span>';
+   66  	}
+   ..
+   69  		sprintf(
+   70  			/* translators: %s: Name of current post */
+   71: 			esc_html__( 'Edit %s', 'micro' ),
+   72  			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+   73  		),
+   ..
+   83   * @return bool
+   84   */
+   85: function micro_categorized_blog() {
+   86: 	if ( false === ( $all_the_cool_cats = get_transient( 'micro_categories' ) ) ) {
+   87  		// Create an array of all the categories that are attached to posts.
+   88  		$all_the_cool_cats = get_categories( array(
+   ..
+   96  		$all_the_cool_cats = count( $all_the_cool_cats );
+   97  
+   98: 		set_transient( 'micro_categories', $all_the_cool_cats );
+   99  	}
+  100  
+  101  	if ( $all_the_cool_cats > 1 ) {
+  102: 		// This blog has more than 1 category so micro_categorized_blog should return true.
+  103  		return true;
+  104  	} else {
+  105: 		// This blog has only 1 category so micro_categorized_blog should return false.
+  106  		return false;
+  107  	}
+  ...
+  109  
+  110  /**
+  111:  * Flush out the transients used in micro_categorized_blog.
+  112   */
+  113: function micro_category_transient_flusher() {
+  114  	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+  115  		return;
+  116  	}
+  117  	// Like, beat it. Dig?
+  118: 	delete_transient( 'micro_categories' );
+  119  }
+  120: add_action( 'edit_category', 'micro_category_transient_flusher' );
+  121: add_action( 'save_post',     'micro_category_transient_flusher' );
+  122  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-none.php:
+   12  <div class="no-results not-found">
+   13  	<header class="page-header">
+   14: 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'micro' ); ?></h1>
+   15  	</header><!-- .page-header -->
+   16  
+   ..
+   19  		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+   20  
+   21: 			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'micro' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+   22  
+   23  		<?php elseif ( is_search() ) : ?>
+   24  
+   25: 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'micro' ); ?></p>
+   26  			<?php
+   27  				get_search_form();
+   ..
+   29  		else : ?>
+   30  
+   31: 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'micro' ); ?></p>
+   32  			<?php
+   33  				get_search_form();
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-page.php:
+   20  
+   21  			wp_link_pages( array(
+   22: 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'micro' ),
+   23  				'after'  => '</div>',
+   24  			) );
+   ..
+   31  				sprintf(
+   32  					/* translators: %s: Name of current post */
+   33: 					esc_html__( 'Edit %s', 'micro' ),
+   34  					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+   35  				),
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-search.php:
+   16  		<?php if ( 'post' === get_post_type() ) : ?>
+   17  		<div class="entry-meta">
+   18: 			<?php micro_posted_on(); ?>
+   19  		</div><!-- .entry-meta -->
+   20  		<?php endif; ?>
+   ..
+   26  
+   27  	<footer class="entry-footer">
+   28: 		<?php micro_entry_footer(); ?>
+   29  	</footer><!-- .entry-footer -->
+   30  </article><!-- #post-## -->
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content.php:
+   21  		if ( 'post' === get_post_type() ) : ?>
+   22  		<div class="entry-meta">
+   23: 			<?php micro_posted_on(); ?>
+   24  		</div><!-- .entry-meta -->
+   25  		<?php
+   ..
+   31  			the_content( sprintf(
+   32  				/* translators: %s: Name of current post. */
+   33: 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'micro' ), array( 'span' => array( 'class' => array() ) ) ),
+   34  				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+   35  			) );
+   36  
+   37  			wp_link_pages( array(
+   38: 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'micro' ),
+   39  				'after'  => '</div>',
+   40  			) );
+   ..
+   43  
+   44  	<footer class="entry-footer">
+   45: 		<?php micro_entry_footer(); ?>
+   46  	</footer><!-- .entry-footer -->
+   47  </article><!-- #post-## -->
+
+96 matches across 17 files
+
+
+Searching 94 files for "dxstarter"
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/404.php:
+   18  						<div class="error-404 not-found">
+   19  							<header class="page-header">
+   20: 								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dxstarter' ); ?></h1>
+   21  							</header><!-- .page-header -->
+   22  
+   23  							<div class="page-content">
+   24: 								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'dxstarter' ); ?></p>
+   25  
+   26  								<?php
+   ..
+   30  
+   31  								// Only show the widget if site has multiple categories.
+   32: 								if ( micro_categorized_blog() ) :
+   33  								?>
+   34  
+   35  								<div class="widget widget_categories">
+   36: 									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'dxstarter' ); ?></h2>
+   37  									<ul>
+   38  									<?php
+   ..
+   52  
+   53  								/* translators: %1$s: smiley */
+   54: 								$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'dxstarter' ), convert_smilies( ':)' ) ) . '</p>';
+   55  								the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+   56  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/comments.php:
+   29  			<?php
+   30  				printf( // WPCS: XSS OK.
+   31: 					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'dxstarter' ) ),
+   32  					number_format_i18n( get_comments_number() ),
+   33  					'<span>' . get_the_title() . '</span>'
+   ..
+   38  		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+   39  		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+   40: 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'dxstarter' ); ?></h2>
+   41  			<div class="nav-links">
+   42  
+   43: 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'dxstarter' ) ); ?></div>
+   44: 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'dxstarter' ) ); ?></div>
+   45  
+   46  			</div><!-- .nav-links -->
+   ..
+   59  		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+   60  		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+   61: 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'dxstarter' ); ?></h2>
+   62  			<div class="nav-links">
+   63  
+   64: 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'dxstarter' ) ); ?></div>
+   65: 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'dxstarter' ) ); ?></div>
+   66  
+   67  			</div><!-- .nav-links -->
+   ..
+   76  	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+   77  
+   78: 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dxstarter' ); ?></p>
+   79  	<?php
+   80  	endif;
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/footer.php:
+   18  			<div class="columns small-12">
+   19  				<div class="site-info">
+   20: 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dxstarter' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'dxstarter' ), 'WordPress' ); ?></a>
+   21  					<span class="sep"> | </span>
+   22: 					<?php printf( esc_html__( 'Developed by: %1$s by %2$s.', 'dxstarter' ), 'dxstarter', '<a href="http://devrix.com">DevriX</a>' ); ?>
+   23  				</div><!-- .site-info -->
+   24  			</div><!-- .small-12 -->
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/functions.php:
+   35  
+   36  
+   37: if ( ! function_exists( 'micro_setup' ) ) :
+   38  /**
+   39   * Sets up theme defaults and registers support for various WordPress features.
+   ..
+   43   * as indicating support for post thumbnails.
+   44   */
+   45: function micro_setup() {
+   46  	/*
+   47  	 * Make theme available for translation.
+   48  	 * Translations can be filed in the /languages/ directory.
+   49  	 * If you're building a theme based on DevriX Starter, use a find and replace
+   50: 	 * to change 'dxstarter' to the name of your theme in all the template files.
+   51  	 */
+   52: 	load_theme_textdomain( 'dxstarter', get_template_directory() . '/languages' );
+   53  
+   54  	// Add default posts and comments RSS feed links to head.
+   ..
+   72  	// This theme uses wp_nav_menu() in one location.
+   73  	register_nav_menus( array(
+   74: 		'primary' => esc_html__( 'Primary', 'dxstarter' ),
+   75  	) );
+   76  
+   ..
+  100  
+  101  	// Set up the WordPress core custom background feature.
+  102: 	add_theme_support( 'custom-background', apply_filters( 'micro_custom_background_args', array(
+  103  		'default-color' => 'ffffff',
+  104  		'default-image' => '',
+  ...
+  106  }
+  107  endif;
+  108: add_action( 'after_setup_theme', 'micro_setup' );
+  109  
+  110  /**
+  ...
+  115   * @global int $content_width
+  116   */
+  117: function micro_content_width() {
+  118: 	$GLOBALS['content_width'] = apply_filters( 'micro_content_width', 640 );
+  119  }
+  120: add_action( 'after_setup_theme', 'micro_content_width', 0 );
+  121  
+  122  /**
+  ...
+  125   * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+  126   */
+  127: function micro_widgets_init() {
+  128  	register_sidebar( array(
+  129: 		'name'          => esc_html__( 'Sidebar', 'dxstarter' ),
+  130  		'id'            => 'sidebar-1',
+  131  		'description'   => '',
+  ...
+  136  	) );
+  137  }
+  138: add_action( 'widgets_init', 'micro_widgets_init' );
+  139  
+  140  /**
+  141   * Enqueue scripts and styles.
+  142   */
+  143: function micro_scripts() {
+  144: 	wp_enqueue_style( 'dxstarter-style', get_template_directory_uri() . '/assets/css/master.css' );
+  145  	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+  146  	
+  147  
+  148: 	wp_enqueue_script( 'dxstarter-navigation', get_template_directory_uri() . '/assets/scripts/scripts.min.js', array( "jquery" ), '20151215', true );
+  149  
+  150  	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  ...
+  152  	}
+  153  }
+  154: add_action( 'wp_enqueue_scripts', 'micro_scripts' );
+  155  
+  156  /**
+  157   * Remove the margin-top styling added to the HTML tag by default from WordPress
+  158   */
+  159: function micro_remove_html_margin() {
+  160  	remove_action( 'wp_head', '_admin_bar_bump_cb' );
+  161  }
+  162: add_action( 'get_header', 'micro_remove_html_margin' );
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/header.php:
+   23  <body <?php body_class(); ?>>
+   24  <div id="page" class="site">
+   25: 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dxstarter' ); ?></a>
+   26  
+   27  	<header id="masthead" class="site-header">
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/package.json:
+    1  {
+    2:   "name": "dxstarter",
+    3    "version": "1.0.0",
+    4    "description": "Quick settings for developing themes.",
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/search.php:
+   20  
+   21  						<header class="page-header">
+   22: 							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dxstarter' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+   23  						</header><!-- .page-header -->
+   24  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/style.css:
+    8   * License: GNU General Public License v2 or later
+    9   * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+   10:  * Text Domain: dxstarter
+   11   * Tags:
+   12   */
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/custom-header.php:
+   19   * Set up the WordPress core custom header feature.
+   20   *
+   21:  * @uses micro_header_style()
+   22   */
+   23: function micro_custom_header_setup() {
+   24: 	add_theme_support( 'custom-header', apply_filters( 'micro_custom_header_args', array(
+   25  		'default-image'          => '',
+   26  		'default-text-color'     => '000000',
+   ..
+   28  		'height'                 => 250,
+   29  		'flex-height'            => true,
+   30: 		'wp-head-callback'       => 'micro_header_style',
+   31  	) ) );
+   32  }
+   33: add_action( 'after_setup_theme', 'micro_custom_header_setup' );
+   34  
+   35: if ( ! function_exists( 'micro_header_style' ) ) :
+   36  /**
+   37   * Styles the header image and text displayed on the blog.
+   38   *
+   39:  * @see micro_custom_header_setup().
+   40   */
+   41: function micro_header_style() {
+   42  	$header_text_color = get_header_textcolor();
+   43  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/customizer.php:
+   11   * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+   12   */
+   13: function micro_customize_register( $wp_customize ) {
+   14  	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+   15  	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+   16  	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+   17  }
+   18: add_action( 'customize_register', 'micro_customize_register' );
+   19  
+   20  /**
+   21   * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+   22   */
+   23: function micro_customize_preview_js() {
+   24: 	wp_enqueue_script( 'micro_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+   25  }
+   26: add_action( 'customize_preview_init', 'micro_customize_preview_js' );
+   27  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/extras.php:
+   14   * @return array
+   15   */
+   16: function micro_body_classes( $classes ) {
+   17  	// Adds a class of group-blog to blogs with more than 1 published author.
+   18  	if ( is_multi_author() ) {
+   ..
+   27  	return $classes;
+   28  }
+   29: add_filter( 'body_class', 'micro_body_classes' );
+   30  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/jetpack.php:
+   14   * See: https://jetpack.me/support/responsive-videos/
+   15   */
+   16: function micro_jetpack_setup() {
+   17  	// Add theme support for Infinite Scroll.
+   18  	add_theme_support( 'infinite-scroll', array(
+   19  		'container' => 'main',
+   20: 		'render'    => 'micro_infinite_scroll_render',
+   21  		'footer'    => 'page',
+   22  	) );
+   ..
+   25  	add_theme_support( 'jetpack-responsive-videos' );
+   26  }
+   27: add_action( 'after_setup_theme', 'micro_jetpack_setup' );
+   28  
+   29  /**
+   30   * Custom render function for Infinite Scroll.
+   31   */
+   32: function micro_infinite_scroll_render() {
+   33  	while ( have_posts() ) {
+   34  		the_post();
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/inc/template-tags.php:
+    8   */
+    9  
+   10: if ( ! function_exists( 'micro_posted_on' ) ) :
+   11  /**
+   12   * Prints HTML with meta information for the current post-date/time and author.
+   13   */
+   14: function micro_posted_on() {
+   15  	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+   16  	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+   ..
+   26  
+   27  	$posted_on = sprintf(
+   28: 		esc_html_x( 'Posted on %s', 'post date', 'dxstarter' ),
+   29  		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+   30  	);
+   31  
+   32  	$byline = sprintf(
+   33: 		esc_html_x( 'by %s', 'post author', 'dxstarter' ),
+   34  		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+   35  	);
+   ..
+   40  endif;
+   41  
+   42: if ( ! function_exists( 'micro_entry_footer' ) ) :
+   43  /**
+   44   * Prints HTML with meta information for the categories, tags and comments.
+   45   */
+   46: function micro_entry_footer() {
+   47  	// Hide category and tag text for pages.
+   48  	if ( 'post' === get_post_type() ) {
+   49  		/* translators: used between list items, there is a space after the comma */
+   50: 		$categories_list = get_the_category_list( esc_html__( ', ', 'dxstarter' ) );
+   51: 		if ( $categories_list && micro_categorized_blog() ) {
+   52: 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'dxstarter' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+   53  		}
+   54  
+   55  		/* translators: used between list items, there is a space after the comma */
+   56: 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'dxstarter' ) );
+   57  		if ( $tags_list ) {
+   58: 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'dxstarter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+   59  		}
+   60  	}
+   ..
+   62  	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+   63  		echo '<span class="comments-link">';
+   64: 		comments_popup_link( esc_html__( 'Leave a comment', 'dxstarter' ), esc_html__( '1 Comment', 'dxstarter' ), esc_html__( '% Comments', 'dxstarter' ) );
+   65  		echo '</span>';
+   66  	}
+   ..
+   69  		sprintf(
+   70  			/* translators: %s: Name of current post */
+   71: 			esc_html__( 'Edit %s', 'dxstarter' ),
+   72  			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+   73  		),
+   ..
+   83   * @return bool
+   84   */
+   85: function micro_categorized_blog() {
+   86: 	if ( false === ( $all_the_cool_cats = get_transient( 'micro_categories' ) ) ) {
+   87  		// Create an array of all the categories that are attached to posts.
+   88  		$all_the_cool_cats = get_categories( array(
+   ..
+   96  		$all_the_cool_cats = count( $all_the_cool_cats );
+   97  
+   98: 		set_transient( 'micro_categories', $all_the_cool_cats );
+   99  	}
+  100  
+  101  	if ( $all_the_cool_cats > 1 ) {
+  102: 		// This blog has more than 1 category so micro_categorized_blog should return true.
+  103  		return true;
+  104  	} else {
+  105: 		// This blog has only 1 category so micro_categorized_blog should return false.
+  106  		return false;
+  107  	}
+  ...
+  109  
+  110  /**
+  111:  * Flush out the transients used in micro_categorized_blog.
+  112   */
+  113: function micro_category_transient_flusher() {
+  114  	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+  115  		return;
+  116  	}
+  117  	// Like, beat it. Dig?
+  118: 	delete_transient( 'micro_categories' );
+  119  }
+  120: add_action( 'edit_category', 'micro_category_transient_flusher' );
+  121: add_action( 'save_post',     'micro_category_transient_flusher' );
+  122  
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-none.php:
+   12  <div class="no-results not-found">
+   13  	<header class="page-header">
+   14: 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dxstarter' ); ?></h1>
+   15  	</header><!-- .page-header -->
+   16  
+   ..
+   19  		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+   20  
+   21: 			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'dxstarter' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+   22  
+   23  		<?php elseif ( is_search() ) : ?>
+   24  
+   25: 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dxstarter' ); ?></p>
+   26  			<?php
+   27  				get_search_form();
+   ..
+   29  		else : ?>
+   30  
+   31: 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dxstarter' ); ?></p>
+   32  			<?php
+   33  				get_search_form();
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-page.php:
+   20  
+   21  			wp_link_pages( array(
+   22: 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dxstarter' ),
+   23  				'after'  => '</div>',
+   24  			) );
+   ..
+   31  				sprintf(
+   32  					/* translators: %s: Name of current post */
+   33: 					esc_html__( 'Edit %s', 'dxstarter' ),
+   34  					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+   35  				),
+
+/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/micro/template-parts/content-search.php:
+   16  		<?php if ( 'post' === get_post_type() ) : ?>
+   17  		<div class="entry-meta">
+   18: 			<?php micro_posted_on(); ?>
+   19  		</div><!-- .entry-meta -->
+   20  		<?php endif; ?>
+   ..
+   26  
+   27  	<footer class="entry-footer">
+   28: 		<?php micro_entry_footer(); ?>
+   29  	</footer><!-- .entry-footer -->
+   30  </article><!-- #post-## -->
+
+92 matches across 16 files

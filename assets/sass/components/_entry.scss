@@ -1,0 +1,47 @@
+.entry {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid $color-text;
+
+	.entry-content {
+		margin: 10px 0;
+	}
+
+	.comments-link {
+		margin-right: 10px;
+	}
+
+	.entry-title {
+		background: $color-text;
+		color: $color-background;
+		padding: 5px;
+		margin-bottom: 10px;
+		font-size: 22px;
+
+		a {
+			color: $color-background;
+		}
+
+		a:hover {
+			color: $color-background;
+		}
+	}
+
+	.posted-on {
+		.updated {
+			margin-left: 20px;
+		}
+	}
+
+	.attachment-post-thumbnail {
+		float: left;
+		max-width: 50%;
+		padding-right: 20px;
+		padding-bottom: 20px;
+
+		@media (max-width: $breakpoint-small) {
+			max-width: 100%;
+			margin-bottom: 40px;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+input {
+	background: $color-background;
+	border: 1px solid $color-text;
+	color: $color-text;
+	font-size: 13px;
+	padding: 8px 10px;
+
+	&:focus {
+		outline: none;
+	}
+
+	&[type="button"]:active {
+		background: $color-text;
+		color: $color-background;
+	}
+}
+
+button,
+textarea {
+	background: $color-background;
+	border: 1px solid $color-text;
+	color: $color-text;
+	font-family: $font-primary;
+	font-size: 13px;
+	padding: 8px 10px;
+
+	&:focus {
+		outline: none;
+	}
+}

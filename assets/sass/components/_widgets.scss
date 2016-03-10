@@ -1,0 +1,11 @@
+.widget {
+	margin-bottom: 20px;
+
+	li {
+		&:before {
+			content: ">";
+			display: inline-block;
+			margin-right: 5px;
+		}
+	}
+}
