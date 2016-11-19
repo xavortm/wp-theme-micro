@@ -55,9 +55,9 @@ Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 = 1.3.0 - November 18 2016 =
 * Added recent posts on "not found" page
+* Improved mobile menu
 * Improved comments stylings
 * Improved widgets stylings
-* Improved mobile menu
 * Changed build setup to Gulp from Grunt
 * Fixed missing stylings from the Customizer
 * Fixed spacing between edited/last updated date
@@ -80,3 +80,4 @@ Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Uses Roboto Mono from Google fonts as secure fallback font https://www.google.com/fonts/specimen/Roboto+Mono [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+* assets/images/menu-icon.svg - custom made menu icon by the theme's author (Alex Dimitrov)
