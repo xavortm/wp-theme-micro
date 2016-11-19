@@ -2,5 +2,12 @@
 
 Modified DevriX Starter starter theme by DevriX
 
+= 7/3/2016 - Version 1.2.5 =
+ * More support for changing colors in the theme settings.
+ * String updates in license files
+
+= 7/3/2016 - Version 1.2.4 =
+ * Settings updates and minor string changes for the WordPress theme repository
+
 = 7/3/2016 - Version 1.0.0 =
  * Initial version for the starter theme

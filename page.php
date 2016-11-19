@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<section class="section-fullwidth section-main">
 		<div class="row">
-			<div class="columns medium-8">
+			<div class="columns small-12 medium-8">
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main">
 
@@ -35,10 +35,10 @@ get_header(); ?>
 
 					</main><!-- #main -->
 				</div><!-- #primary -->
-			</div><!-- .columns medium-8 -->
-			<div class="columns medium-4">
+			</div><!-- .columns small-12 medium-8 -->
+			<div class="columns small-12 medium-4">
 				<?php get_sidebar(); ?>
-			</div><!-- .columns medium-4 -->
+			</div><!-- .columns small-12 medium-4 -->
 		</div><!-- .row -->
 	</section><!-- .section-fullwidth section-main -->
 

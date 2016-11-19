@@ -69,6 +69,11 @@ function micro_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/**
+	 * Remove the margin-top added from WP
+	 */
+	add_theme_support( 'admin-bar', array( 'callback' => '__return_false') );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'micro' ),
@@ -100,13 +105,14 @@ function micro_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'micro_custom_background_args', array(
-		'default-color' => '000000',
+		'default-color' => '0f110c',
 		'default-image' => '',
 	) ) );
 
 	add_theme_support( 'custom-header', array(
-		'width' => 1920,
-		'flex-width'    => true
+		'width'         		=> 1920,
+		'default-text-color' 	=> false,
+		'header-text' 			=> false
 	) );
 }
 endif;
@@ -157,14 +163,6 @@ function micro_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'micro_scripts' );
-
-/**
- * Remove the margin-top styling added to the HTML tag by default from WordPress
- */
-function micro_remove_html_margin() {
-	remove_action( 'wp_head', '_admin_bar_bump_cb' );
-}
-add_action( 'get_header', 'micro_remove_html_margin' );
 
 function micro_add_editor_style() {
 	add_editor_style( 'assets/css/editor-style.css' );

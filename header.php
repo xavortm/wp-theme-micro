@@ -25,9 +25,15 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'micro' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
+		<?php if ( get_header_image() ) : ?>
 		<div class="header-image">
-			<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+			</a>
 		</div><!-- .header-image -->
+		<?php endif; ?>
+
 		<div class="row">
 			<div class="columns small-12">
 				<div class="site-branding">

@@ -4,8 +4,8 @@ Contributors: xavortm
 Tags: black, green, two-columns
 
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.0
+Tested up to: 4.6
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,13 +21,49 @@ A clean monospaced theme based on _s. Focused on the text only and no other dist
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-= Does this theme support any plugins? =
+== Copyright ==
 
-DevriX Starter includes support for Infinite Scroll in Jetpack.
+Micro WordPress Theme, Copyright 2010-2016 DevriX & xavortm 
+Micro is distributed under the terms of the GNU GPL 
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Micro Theme bundles the following third-party resources:
+
+HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
+Licenses: MIT/GPL2
+Source: https://github.com/aFarkas/html5shiv
+
+FontAwesome, Copyright 2016 Dave Gandy
+Licens: MIT License
+Source: https://github.com/zurb/foundation-sites
+
+Grunt.js, Copyright jQuery Foundation and other contributors, https://jquery.org/
+Source: https://github.com/gruntjs/grunt
+
+Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.2.4 - August 27 2016 =
+* Added better responsive styling
+* Update the theme for WordPress 4.6
+
+= 1.2.2 - Mar 10 2016 =
+* Add more settings for the customizer
+
+= 1.1 - Mar 10 2016 =
+* Update on theme author name
+
+= 1.0 - Mar 10 2016 =
 * Initial release
 
 == Credits ==

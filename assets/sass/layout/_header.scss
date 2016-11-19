@@ -7,6 +7,10 @@
 	text-align: center
 }
 
+.menu-navigation .menu-item a:hover {
+	color: black;
+}
+
 .main-navigation {
 	display: inline-block;
 
@@ -34,6 +38,10 @@
 		}
 
 		a {
+			color: $color-text;
+		}
+
+		a:hover {
 			color: black;
 		}
 	}
@@ -124,7 +132,7 @@
 		.sub-menu {
 			position: absolute;
 			border: 1px solid #ccc;
-			top: 27px;
+			top: 15px;
 			background: rgba(white, 0.98);
 			max-width: 200px;
 			text-align: left;
@@ -139,7 +147,7 @@
 
 				&:hover {
 					background: transparent;
-					color: $color-primary;
+					color: $color-text;
 				}
 			}
 
