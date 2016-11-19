@@ -5,26 +5,26 @@ Tags: black, green, two-columns
 
 Requires at least: 4.0
 Tested up to: 4.6
-Stable tag: 1.2.4
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Clean monospaced theme based on _s. 
+Clean monospaced theme based on _s.
 
 == Description ==
 
-A clean monospaced theme based on _s. Focused on the text only and no other distractions. For developers - the theme is shipped with Sass files and Gruntfile for easy modifications. Easy color changes can be done from the _varaibles file.
+A clean monospaced theme based on _s. Focused on the text only and no other distractions. For developers - the theme is shipped with Sass files and Gulpfile for easy modifications. Easy color changes can be done from the _varaibles file.
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
 == Copyright ==
 
-Micro WordPress Theme, Copyright 2010-2016 DevriX & xavortm 
-Micro is distributed under the terms of the GNU GPL 
+Micro WordPress Theme, Copyright 2010-2016 DevriX & xavortm
+Micro is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -52,6 +52,15 @@ Source: https://github.com/gruntjs/grunt
 Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 == Changelog ==
+
+= 1.3.0 - November 18 2016 =
+* Added recent posts on "not found" page
+* Improved comments stylings
+* Improved widgets stylings
+* Improved mobile menu
+* Changed build setup to Gulp from Grunt
+* Fixed missing stylings from the Customizer
+* Fixed spacing between edited/last updated date
 
 = 1.2.4 - August 27 2016 =
 * Added better responsive styling

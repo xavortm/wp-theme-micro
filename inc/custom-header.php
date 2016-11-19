@@ -18,7 +18,7 @@
 function micro_customiser_settings( $wp_customize ) {
 
 	// Remove the default color settings.
-	// $wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'colors' );
 	// $wp_customize->remove_section( 'header_image' );
 
 	$wp_customize->add_section( 'micro_color_settings' , array(
@@ -56,44 +56,42 @@ add_action( 'customize_register', 'micro_customiser_settings' );
 function micro_customize_css() {
 	?>
 	<style type="text/css">
-		body, code, kbd, tt, var { 
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>; 
-			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
-		}
-
-		a,
-		.main-navigation .menu-item a,
-		button, input  {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>; 
-		}
-
-		.entry,
-		input,
-		.site-footer {
-			border-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>; 
-		}
-
-		.entry .entry-title {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>; 
-			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>; 
-		}
-
-		.entry .entry-title a {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
-		}
-
-		.entry .entry-title a:hover {
-			color: <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
-		}
-
-		a:hover {
-			color: <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
-			background-color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
-		}
-
-		pre {
+		/* Normal background color and text */
+		body, code, kbd, tt, var, pre, input, textarea, select {
 			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+		}
+
+		/* Inverted background color and text */
+		a:hover,
+		.entry .entry-title,
+		.comment-form-comment label,
+		.form-submit input[type="submit"],
+		.widget_calendar caption,
+		.comments-area .comments-title,
+		.main-navigation.is-extended .sub-menu a:hover,
+		.menu-toggle {
+			color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		/* Overwrite for links */
+		a,
+		.main-navigation .menu-item a,
+		.main-navigation .sub-menu a:hover,
+		button, input  {
+			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		/* Borders */
+		input, button, textarea, select
+		.site-footer {
+			border-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		.entry .entry-title a,
+		.entry .entry-title a:hover {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
 		}
 	</style>
 	<?php

@@ -19,7 +19,7 @@
 				<div class="site-info">
 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'micro' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'micro' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Developed by: %1$s by %2$s.', 'micro' ), 'micro', '<a href="http://devrix.com">DevriX</a>' ); ?>
+					<?php printf( esc_html__( 'Theme: %1$s, developed by %2$s.', 'micro' ), 'micro', '<a href="http://devrix.com">DevriX</a>' ); ?>
 				</div><!-- .site-info -->
 			</div><!-- .small-12 -->
 		</div><!-- .row -->

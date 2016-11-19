@@ -1,11 +1,42 @@
 .widget {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 
 	li {
 		&:before {
 			content: ">";
 			display: inline-block;
 			margin-right: 5px;
+		}
+	}
+
+	.widget-title {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	.search-form {
+		display: flex;
+
+		label {
+			flex: 1 1 auto;
+		}
+
+		.search-field {
+			width: 100%;
+		}
+	}
+
+	&_calendar {
+		td {
+			padding: 8px;
+			text-align: center;
+		}
+
+		caption {
+			background: $color-text;
+			color: $color-background;
+			padding: 8px;
+			margin-bottom: 10px;
 		}
 	}
 }

@@ -8,6 +8,13 @@
 
 .comments-area {
 	margin-top: 40px;
+
+	.comments-title {
+		font-size: 18px;
+		background: $color-text;
+		color: $color-background;
+		padding: 5px;
+	}
 }
 
 .comment {
@@ -23,13 +30,45 @@
 		left: 0;
 	}
 
+	.comment-content {
+		margin: 10px 0;
+	}
+
 	.comment-metadata,
 	.comment-author {
 		display: inline-block;
 	}
 
 	.avatar {
+		display: none;
 		height: 16px;
 		width: 16px;
+	}
+
+	.edit-link {
+		margin-left: 10px;
+		display: inline-block;
+	}
+}
+
+// The input textarea to leave a comment.
+.comment-form-comment {
+	label {
+		color: $color-background;
+		background-color: $color-text;
+		display: block;
+		margin-bottom: -1px;
+		padding: 3px 10px;
+	}
+	textarea {
+		width: 100%;
+	}
+}
+
+.form-submit {
+	input[type="submit"] {
+		background-color: $color-text;
+		color: $color-background;
+		font-weight: bold;
 	}
 }

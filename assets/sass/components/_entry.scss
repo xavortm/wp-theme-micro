@@ -1,7 +1,16 @@
 .entry {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
-	border-bottom: 3px solid $color-text;
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+
+	.entry-title {
+		margin-top: 0;
+	}
 
 	ul {
 		list-style-type: disc;
@@ -61,5 +70,43 @@
 			max-width: 100%;
 			margin-bottom: 40px;
 		}
+	}
+}
+
+.posts-list {
+	margin-top: 60px;
+
+	.posts-list-header {
+		background: $color-text;
+		color: $color-background;
+		font-size: 13px;
+		padding: 3px;
+	}
+
+	.list-item {
+		margin: 0;
+		display: flex;
+		padding: 0;
+		border-bottom: 1px solid $color-text;
+		padding: 3px;
+		text-decoration: none;
+	}
+	.list-item:last-of-type {
+		border-bottom: none;
+	}
+
+	.title {
+		flex: 1 1 auto;
+	}
+
+	.date {
+		flex: 0 1 200px;
+	}
+
+	.title,
+	.date {
+		font-size: 13px;
+		font-weight: bold;
+		margin: 0;
 	}
 }

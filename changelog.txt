@@ -1,6 +1,15 @@
-=== DX-Starter ===
+=== Micro ===
 
-Modified DevriX Starter starter theme by DevriX
+Micro theme build with DX-Starter theme, based on _s
+
+= 19/11/2016 - Version 1.3.0 =
+ * Added recent posts on "not found" page
+ * Improved comments stylings
+ * Improved widgets stylings
+ * Improved mobile menu
+ * Changed build setup to Gulp from Grunt
+ * Fixed missing stylings from the Customizer
+ * Fixed spacing between edited/last updated date
 
 = 7/3/2016 - Version 1.2.5 =
  * More support for changing colors in the theme settings.

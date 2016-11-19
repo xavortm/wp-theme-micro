@@ -14,6 +14,11 @@
 .main-navigation {
 	display: inline-block;
 
+	margin: 10px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+	display: block;
+
 	.menu-toggle {
 		line-height: 1;
 		font-size: 26px;
@@ -29,7 +34,7 @@
 
 	.menu-item {
 		display: inline-block;
-		margin-right: 20px;
+		margin-right: 10px;
 		position: relative;
 		font-weight: bold;
 
@@ -58,9 +63,9 @@
 			position: absolute;
 			left: 0;
 			margin-top: 1rem;
-			background: rgba(white, 0.95);
+			background: rgba(black, 0.95);
 			width: 100%;
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid rgba(black, 0.1);
 			box-shadow: 0 10px 20px rgba(black, 0.1);
 		}
 
@@ -75,17 +80,13 @@
 		}
 
 		.menu-item {
-			border-bottom: 1px solid #f0f0f0;
+			border-bottom: 1px solid rgba(black, 0.1);
 			margin: 0;
 			display: block;
 
 			a {
 				display: block;
 				padding: rem-calc(8px $global-layout-gutter / 2);
-			}
-
-			a:hover {
-				color: $color-primary;
 			}
 		}
 
@@ -97,8 +98,8 @@
 		}
 
 		.sub-menu {
-			border-top: 1px solid #f0f0f0;
-			background: #f0f0f0;
+			border-top: 1px solid rgba(black, 0.1);
+			background: black;
 		}
 	};
 
@@ -116,6 +117,7 @@
 			opacity: 0;
 			transition: 0.2s;
 			transform: translateY(40px);
+			top: 100%;
 		}
 
 		li {
@@ -131,12 +133,17 @@
 
 		.sub-menu {
 			position: absolute;
-			border: 1px solid #ccc;
+			border: 1px solid rgba(black, 0.1);
 			top: 15px;
-			background: rgba(white, 0.98);
+			background: rgba(black, 0.98);
 			max-width: 200px;
 			text-align: left;
 			z-index: 99;
+
+			.sub-menu {
+				left: 100%;
+				top: -1px;
+			}
 
 			a {
 				display: block;
@@ -153,7 +160,7 @@
 
 			li {
 				width: 100%;
-				border-bottom: 1px solid #f0f0f0;
+				border-bottom: 1px solid rgba(black, 0.1);
 				float: none;
 				min-width: 200px;
 				display: block;
@@ -174,36 +181,5 @@
 
 	.site-description {
 		display: inline-block;
-	}
-}
-
-.main-navigation {
-	margin: 10px 0;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #000;
-	display: block;
-
-	li {
-		display: inline-block;
-		margin: 0 10px;
-		position: relative;
-
-		ul {
-			display: none;
-			position: absolute;
-
-			li {
-				display: block;
-				margin: 0;
-				padding: 10px;
-			}
-		}
-
-		&:hover ul {
-			display: block;
-			min-width: 200px;
-			background: black;
-			z-index: 10;
-		}
 	}
 }
