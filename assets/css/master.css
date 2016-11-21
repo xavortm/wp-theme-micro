@@ -166,8 +166,8 @@ body.admin-bar {
       padding-top: 46px; } }
 
 body {
-  font-family: "Monaco", "PT Mono", "Consolas", "courier new";
-  font-size: 14px;
+  font-family: "Courier", "PT Mono", "Consolas", "courier new";
+  font-size: 16px;
   line-height: 1.4;
   color: #b2df82;
   background: #0f110c; }
@@ -195,7 +195,7 @@ a {
 
 h1, h2, h3, h4, h5 {
   line-height: 1.2;
-  font-family: "Monaco", "PT Mono", "Consolas", "courier new";
+  font-family: "Courier", "PT Mono", "Consolas", "courier new";
   margin: 0; }
 
 blockquote {
@@ -1285,6 +1285,19 @@ hr.clear {
 /**
  * The standard section wrapper. Use this with other classes for the base styling.
  */
+.homepage-welcome {
+  text-align: center;
+  padding: 100px 0;
+  border-bottom: 1px solid #b2df82;
+  border-top: 1px solid #b2df82; }
+  .homepage-welcome .row {
+    max-width: 720px; }
+  .homepage-welcome .welcome-title {
+    font-size: 32px;
+    margin-bottom: 40px; }
+  .homepage-welcome .welcome-content {
+    text-align: justify; }
+
 .page-title {
   margin-bottom: 20px; }
 
@@ -1356,7 +1369,7 @@ textarea {
   background: #0f110c;
   border: 1px solid #b2df82;
   color: #b2df82;
-  font-family: "Monaco", "PT Mono", "Consolas", "courier new";
+  font-family: "Courier", "PT Mono", "Consolas", "courier new";
   font-size: 13px;
   padding: 8px 10px; }
   button:focus,
@@ -1390,7 +1403,7 @@ select {
     margin-bottom: 0.5rem;
     margin-top: 1.2rem; }
   .entry .entry-content {
-    margin: 10px 0; }
+    margin: 100px 0; }
   .entry .comments-link {
     margin-right: 10px; }
   .entry .entry-title {
@@ -1446,6 +1459,18 @@ select {
     font-size: 13px;
     font-weight: bold;
     margin: 0; }
+  @media (max-width: 640px) {
+    .posts-list .list-item {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .posts-list .date {
+      -webkit-box-flex: 1;
+          -ms-flex: auto;
+              flex: auto; }
+    .posts-list .comments {
+      display: none; } }
 
 .widget {
   margin-bottom: 30px; }

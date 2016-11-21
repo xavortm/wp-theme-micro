@@ -2,3 +2,23 @@
  * The standard section wrapper. Use this with other classes for the base styling.
  */
 .section-fullwidth {}
+
+.homepage-welcome {
+	text-align: center;
+	padding: 100px 0;
+	border-bottom: 1px solid $color-text;
+	border-top: 1px solid $color-text;
+
+	.row {
+		max-width: 720px;
+	}
+
+	.welcome-title {
+		font-size: 32px;
+		margin-bottom: 40px;
+	}
+
+	.welcome-content {
+		text-align: justify;
+	}
+}

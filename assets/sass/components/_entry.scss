@@ -28,7 +28,7 @@
 	}
 
 	.entry-content {
-		margin: 10px 0;
+		margin: 100px 0;
 	}
 
 	.comments-link {
@@ -108,5 +108,17 @@
 		font-size: 13px;
 		font-weight: bold;
 		margin: 0;
+	}
+
+	@media (max-width: $breakpoint-small) {
+	    .list-item {
+	    	flex-direction: column;
+	    }
+	    .date {
+	    	flex: auto;
+	    }
+		.comments {
+			display: none;
+		}
 	}
 }
