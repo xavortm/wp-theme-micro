@@ -5,7 +5,7 @@ Tags: black, green, two-columns
 
 Requires at least: 4.0
 Tested up to: 4.6
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ Source: https://github.com/gruntjs/grunt
 Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 == Changelog ==
+
+= 1.4.0 - November 21 2016 =
+* Added homepage template
 
 = 1.3.0 - November 18 2016 =
 * Added recent posts on "not found" page

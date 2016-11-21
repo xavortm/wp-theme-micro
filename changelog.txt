@@ -2,6 +2,9 @@
 
 Micro theme build with DX-Starter theme, based on _s
 
+= 21/11/2016 - Version 1.4.0 =
+ * Added homepage template
+
 = 19/11/2016 - Version 1.3.0 =
  * Added recent posts on "not found" page
  * Improved comments stylings
