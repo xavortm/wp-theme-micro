@@ -85,7 +85,8 @@ function micro_customize_css() {
 
 		/* Borders */
 		input, button, textarea, select
-		.site-footer {
+		.site-footer,
+		.homepage-welcome {
 			border-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
