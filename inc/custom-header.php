@@ -49,9 +49,30 @@ function micro_customize_css() {
 	?>
 	<style type="text/css">
 		/* Normal background color and text */
-		body, code, kbd, tt, var, pre, input, textarea, select {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
-			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+		body, code, kbd, tt, var, pre, input, textarea, select,
+		.wp-block-button.is-style-outline .wp-block-button__link {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+			background-color: <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+		}
+
+		hr {
+			background-color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		::-webkit-input-placeholder {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		::-moz-placeholder {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		:-ms-input-placeholder {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		}
+
+		:-moz-placeholder {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
 		/* Inverted background color and text */
@@ -62,24 +83,33 @@ function micro_customize_css() {
 		.widget_calendar caption,
 		.comments-area .comments-title,
 		.main-navigation.is-extended .sub-menu a:hover,
-		.menu-toggle {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
-			background-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		.menu-toggle,
+		.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+		.wp-block-file .wp-block-file__button,
+		.wp-block-button__link {
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+			background-color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
 		/* Overwrite for links */
 		a,
 		.main-navigation .menu-item a,
 		.main-navigation .sub-menu a:hover,
+		.main-navigation .children a:hover,
+		.wp-block-latest-posts__post-date,
+		.wp-block-latest-comments__comment-date,
 		button, input  {
-			color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+			color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
 		/* Borders */
 		input, button, textarea, select
 		.site-footer,
-		.homepage-welcome {
-			border-color:<?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+		.homepage-welcome,
+		.wp-block-table.is-style-stripes,
+		.wp-block-file .wp-block-file__button,
+		.wp-block-button.is-style-outline .wp-block-button__link  {
+			border-color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
 		.entry .entry-title a,

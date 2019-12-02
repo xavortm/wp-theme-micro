@@ -32,7 +32,8 @@
 		}
 	}
 
-	.menu-item {
+	.menu-item,
+	.page_item {
 		display: inline-block;
 		margin-right: 10px;
 		position: relative;
@@ -51,8 +52,10 @@
 		}
 	}
 
-	.menu-item-has-children {
-		&:hover > .sub-menu {
+	.menu-item-has-children,
+	.page_item_has_children {
+		&:hover > .sub-menu,
+		&:hover > .children {
 			display: block;
 		}
 	}
@@ -79,7 +82,8 @@
 			pointer-events: auto;
 		}
 
-		.menu-item {
+		.menu-item,
+		.page_item {
 			border-bottom: 1px solid rgba(black, 0.1);
 			margin: 0;
 			display: block;
@@ -90,14 +94,16 @@
 			}
 		}
 
-		.menu-item-has-children .dropdown-arrow {
+		.menu-item-has-children .dropdown-arrow,
+		.page_item_has_children .dropdown-arrow {
 			height: rem-calc(10px + 16px*2);
 			width: rem-calc(10px + 16px*2);
 			line-height: rem-calc(10px + 16px*2);
 			padding: 0;
 		}
 
-		.sub-menu {
+		.sub-menu,
+		.children {
 			border-top: 1px solid rgba(black, 0.1);
 			background: black;
 		}
@@ -112,35 +118,31 @@
 			display: block;
 		}
 
-		.sub-menu {
-			pointer-events: none;
-			opacity: 0;
-			transition: 0.2s;
-			transform: translateY(40px);
-			top: 100%;
-		}
-
 		li {
 			position: relative;
 		}
-
-		li:hover > .sub-menu{
+		
+		li:hover > .sub-menu,
+		li:hover > .children  {
 			opacity: 1;
 			pointer-events: auto;
-			transition: 0.2s;
-			transform: translateY(0);
 		}
-
-		.sub-menu {
+		
+		.sub-menu,
+		.children {
+			pointer-events: none;
+			opacity: 0;
+			top: 100%;
 			position: absolute;
 			border: 1px solid rgba(black, 0.1);
-			top: 15px;
+			top: 100%;
 			background: rgba(black, 0.98);
 			max-width: 200px;
 			text-align: left;
 			z-index: 99;
 
-			.sub-menu {
+			.sub-menu
+			.children {
 				left: 100%;
 				top: -1px;
 			}
@@ -150,7 +152,6 @@
 				padding: 8px 13px;
 				font-size: 13px;
 				font-weight: normal;
-				color: black;
 
 				&:hover {
 					background: transparent;
@@ -177,6 +178,8 @@
 		display: inline-block;
 		font-size: 22px;
 		margin: 0;
+		line-height: 1.2;
+		font-weight: bold;
 	}
 
 	.site-description {

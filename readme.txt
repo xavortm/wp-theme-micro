@@ -4,8 +4,8 @@ Contributors: xavortm
 Tags: black, green, two-columns
 
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.4.0
+Tested up to: 5.3
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,12 @@ Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 == Changelog ==
 
+= 1.5.0 - December 2 2019 =
+* Added Gutenberg default styles
+* Added color stylings for borders, inputs and other standard HTML elements that were not following the theme styles.
+* Tested against WP v5.3 and Gutenberg editor
+* Removed Roboto font from the theme
+
 = 1.4.0 - November 21 2016 =
 * Added homepage template
 
@@ -82,5 +88,4 @@ Foundation, 1998‐2016 ZURB, Inc. All rights reserved.
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Uses Roboto Mono from Google fonts as secure fallback font https://www.google.com/fonts/specimen/Roboto+Mono [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 * assets/images/menu-icon.svg - custom made menu icon by the theme's author (Alex Dimitrov)

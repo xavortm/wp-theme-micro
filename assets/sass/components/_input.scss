@@ -1,14 +1,27 @@
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: rgba($color-text, .5);
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: rgba($color-text, .5);
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: rgba($color-text, .5);
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: rgba($color-text, .5);
+}
+
 input {
 	background: $color-background;
 	border: 1px solid $color-text;
 	color: $color-text;
 	font-size: 13px;
 	padding: 8px 10px;
-
+	
 	&:focus {
 		outline: none;
 	}
-
+	
 	&[type="button"]:active {
 		background: $color-text;
 		color: $color-background;
@@ -23,7 +36,7 @@ textarea {
 	font-family: $font-primary;
 	font-size: 13px;
 	padding: 8px 10px;
-
+	
 	&:focus {
 		outline: none;
 	}

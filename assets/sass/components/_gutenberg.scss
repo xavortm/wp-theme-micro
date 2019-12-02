@@ -1,0 +1,87 @@
+.wp-block-button {
+	&__link {
+		border-radius: 0;
+		border: 1px solid $color-text;
+		background: $color-text;
+		color: $color-background;
+
+		&:hover {
+			color: $color-background;
+		}
+	}
+
+	&.is-style-outline {
+		.wp-block-button__link {
+			border-color: $color-text;
+			background: $color-background;
+			color: $color-text;
+		}
+	}
+}
+
+.wp-block-file {
+	.wp-block-file__button {
+		border-radius: 0;
+		border: 1px solid $color-text;
+		background: $color-text;
+		color: $color-background;
+	}
+}
+
+.wp-block-gallery {
+	&.alignleft,
+	&.alignright {
+		display: flex;
+	}
+}
+
+.wp-block-column {
+	.wp-block-image {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.wp-block-latest-posts {
+	margin-left: 0;
+
+	a {
+		font-weight: bold;
+	}
+
+	&__post-date {
+		color: $color-text;
+	}
+}
+
+.entry {
+	.columns-2,
+	.columns-3,
+	.columns-4,
+	.columns-5,
+	.columns-6,
+	.columns-7,
+	.columns-8,
+	.wp-block-latest-posts,
+	.wp-block-latest-comments {
+		// In case there is UL tag
+		margin-left: 0;
+	}
+}
+
+.wp-block-latest-comments {
+	&__comment-date {
+		color: $color-text;
+	}
+}
+
+.wp-block-table {
+	&.is-style-stripes {
+		border-bottom: 1px solid $color-text;
+
+		tbody tr:nth-child(odd) {
+			background: $color-text;
+			color: $color-background;
+		}
+	}
+}
