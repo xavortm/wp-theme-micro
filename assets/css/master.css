@@ -192,6 +192,9 @@ a {
   a:hover {
     color: #0f110c;
     background-color: #b2df82; }
+  a:focus {
+    outline: 1px dashed #b2df82;
+    box-shadow: inset 0 0 0 2px #0f110c; }
 
 h1, h2, h3, h4, h5 {
   line-height: 1.2;

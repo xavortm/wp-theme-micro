@@ -91,6 +91,11 @@ function micro_customize_css() {
 			background-color: <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
 		}
 
+		a:focus {
+			outline: 1px dashed <?php echo esc_attr ( get_theme_mod( 'micro_text_color', '#b2df82' ) ); ?>;
+			box-shadow: inset 0 0 0 2px <?php echo esc_attr ( get_theme_mod( 'micro_background_color', '#060c08' ) ); ?>;
+		}
+
 		/* Overwrite for links */
 		a,
 		.main-navigation .menu-item a,

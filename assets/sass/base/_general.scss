@@ -49,6 +49,11 @@ a {
 		color: $color-background;
 		background-color: $color-text;
 	}
+
+	&:focus {
+		outline: 1px dashed $color-text;
+		box-shadow: inset 0 0 0 2px $color-background;
+	}
 }
 
 h1,h2,h3,h4,h5 {

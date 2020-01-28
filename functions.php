@@ -91,18 +91,6 @@ function micro_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
-
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'micro_custom_background_args', array(
 		'default-color' => '0f110c',
@@ -160,8 +148,3 @@ function micro_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'micro_scripts' );
-
-function micro_add_editor_style() {
-	add_editor_style( 'assets/css/editor-style.css' );
-}
-add_action( "admin_init", "micro_add_editor_style" );
