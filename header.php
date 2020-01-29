@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'micro' ); ?></a>
 
-	<header id="masthead" class="site-header" role="<?php _e( 'banner', 'textdomain' ); ?>">
+	<header id="masthead" class="site-header" role="<?php _e( 'banner', 'micro' ); ?>">
 
 		<?php if ( get_header_image() ) : ?>
 		<div class="header-image">
@@ -54,7 +54,7 @@
 					endif; ?>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary', 'textdomain' ); ?>">
+				<nav id="site-navigation" class="main-navigation" aria-label="<?php _e( 'Primary', 'micro' ); ?>">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<span class="screen-reader-text">Menu</span>
 					</button>
@@ -66,4 +66,4 @@
 		</div>
 	</header><!-- #site-header -->
 
-	<div id="content" class="site-content" role="<?php _e( 'contentinfo', 'main' ); ?>">
+	<div id="content" class="site-content" role="<?php _e( 'contentinfo', 'micro' ); ?>">

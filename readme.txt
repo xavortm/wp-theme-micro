@@ -14,6 +14,9 @@ A clean monospaced theme based on _s. Focused on the text only and no other dist
 
 == Changelog ==
 
+= 1.5.3 =
+* Fix missmatching text domains
+
 = 1.5.2 =
 * Added source files to downloadable
 * Updated README file

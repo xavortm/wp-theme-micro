@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer section-fullwidth" role="<?php _e( 'contentinfo', 'textdomain' ); ?>">
+	<footer id="colophon" class="site-footer section-fullwidth" role="<?php _e( 'contentinfo', 'micro' ); ?>">
 		<div class="row">
 			<div class="columns small-12">
 				<div class="site-info">

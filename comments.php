@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 							'%1$1s Comments',
 							$comments_number,
 							'comments title',
-							'textdomain'
+							'micro'
 						)
 					),
 					number_format_i18n( $comments_number )
