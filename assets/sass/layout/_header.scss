@@ -120,6 +120,14 @@
 
 		li {
 			position: relative;
+
+			a:focus + .sub-menu,
+			a:focus + .children,
+			&.focus > .sub-menu,
+			&.focus > .children {
+				opacity: 1;
+				pointer-events: auto;
+			}
 		}
 		
 		li:hover > .sub-menu,

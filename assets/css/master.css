@@ -1149,6 +1149,12 @@ hr.clear {
       display: block; }
     .main-navigation li {
       position: relative; }
+      .main-navigation li a:focus + .sub-menu,
+      .main-navigation li a:focus + .children,
+      .main-navigation li.focus > .sub-menu,
+      .main-navigation li.focus > .children {
+        opacity: 1;
+        pointer-events: auto; }
     .main-navigation li:hover > .sub-menu,
     .main-navigation li:hover > .children {
       opacity: 1;

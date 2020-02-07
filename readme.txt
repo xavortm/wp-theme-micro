@@ -14,6 +14,9 @@ A clean monospaced theme based on _s. Focused on the text only and no other dist
 
 == Changelog ==
 
+= 1.5.4 =
+* Add dropdown toggle on focus
+
 = 1.5.3 =
 * Fix missmatching text domains
 
