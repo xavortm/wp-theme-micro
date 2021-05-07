@@ -4,7 +4,7 @@
   "description": "Micro - WordPress.org theme by Alex Dimitrov",
   "main": "Gulpfile.js",
   "dependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.3.0",
     "grunt-sass": "^1.1.0"
   },
   "devDependencies": {
